@@ -7,6 +7,16 @@ public class Produto {
     private String nomeDoProduto;
     private int idProduto;
 
+
+    public Produto(float preco, String descricao, float avaliacao, String nomeDoProduto, int idProduto){
+        this.preco = preco;
+        this.descricao = descricao;
+        this.avaliacao = avaliacao;
+        this.nomeDoProduto = nomeDoProduto;
+        this.idProduto = idProduto;
+    }
+
+
     public float getPreco() {
         return preco;
     }
@@ -38,4 +48,5 @@ public class Produto {
     public void setIdProduto(int idProduto) {
         this.idProduto = idProduto;
     }
+
 }
