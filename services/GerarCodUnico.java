@@ -1,15 +1,23 @@
-<<<<<<< HEAD
-import java.util.Random;
-=======
 package services;
->>>>>>> 798d278d79d336e4539d73e121d80e8d374c5435
+
+import java.util.HashSet;
+import java.util.Random;
 
 public class GerarCodUnico {
     private Random gerador = new Random();
+    private int codigo;
+    private HashSet<Integer> codigos = new HashSet<>();
 
-    public void gerarRandom() {
-        for ( int i = 0; i < 10; i++) {
-            System.out.println(gerador.nextInt());
-        }
+    public int gerarCodRandom() {
+        do {
+            codigo = gerador.nextInt(1000000);
+            codigos.add(codigo);
+        } while (codigos.contains(codigo));
+        
+        System.out.println("--------------------------");
+        System.out.println("Código gerado: " + codigo);
+        System.out.println("--------------------------");
+
+        return codigo;
     }
 }
